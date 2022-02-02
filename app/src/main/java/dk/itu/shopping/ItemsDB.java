@@ -9,13 +9,13 @@ public class ItemsDB {
     public ItemsDB() { }
 
     public String listItems() {
-        String r= "";
+        String r = "";
         for(Item i: ItemsDB)
             r= r+"\n Buy " + i.toString();
         return r;
     }
 
-    public void addItem(String what, String where){
+    public void addItem(String what, String where) {
         ItemsDB.add(new Item(what, where));
     }
 
