@@ -18,7 +18,7 @@
     <Button
         android:id="@+id/list_button"
         android:layout_width="159dp"
-        android:layout_height="15dp"
+        android:layout_height="27dp"
         android:layout_gravity="center"
         android:layout_margin="5dp"
         android:background="#39f208"

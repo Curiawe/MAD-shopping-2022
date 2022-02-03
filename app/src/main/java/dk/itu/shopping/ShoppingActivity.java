@@ -30,12 +30,12 @@ public class ShoppingActivity extends AppCompatActivity {
         items= findViewById(R.id.items);
 
         listItems= findViewById(R.id.list_button);
-        listItems.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                items.setBackgroundColor(Color.parseColor("#FFFFFF"));
-                items.setText("Shopping List:"+itemsDB.listItems());
-            }
+
+        // Lambda expression version of writing and handling onClick listening event
+        listItems.setOnClickListener((View view) -> {
+            items.setBackgroundColor(Color.parseColor("#FFFFFF"));
+            items.setText("Shopping List:" + itemsDB.listItems());
         });
+
     }
 }
