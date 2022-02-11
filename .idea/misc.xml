@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/johan/OneDrive/ITU/MobileAppDev/Projects/Shopping-List/app/src/main/res/layout/shopping.xml" value="0.264" />
+        <entry key="app/src/main/res/layout-land/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-land/shopping.xml" value="0.2146329976383442" />
+        <entry key="app/src/main/res/layout/activity_list.xml" value="0.1" />
         <entry key="app/src/main/res/layout/shopping.xml" value="0.1" />
       </map>
     </option>
