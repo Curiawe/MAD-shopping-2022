@@ -5,8 +5,7 @@ public class Item {
     private String mWhere = null;
 
     public Item(String what, String where) {
-        mWhat = what;
-        mWhere = where;
+        mWhat = what;  mWhere = where;
     }
 
     @Override
@@ -29,7 +28,6 @@ public class Item {
     public void setWhere(String where) {
         mWhere = where;
     }
-
     public String oneLine(String pre, String post) {
         return pre+mWhat + post + mWhere;
     }

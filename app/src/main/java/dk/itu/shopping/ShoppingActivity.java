@@ -2,40 +2,60 @@ package dk.itu.shopping;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ShoppingActivity extends AppCompatActivity {
 
-    //Shopping V1
+    //Shopping V2
 
-    // GUI variables
-    private Button listItems;
-    private TextView items;
+    //GUI variables
+    private Button addItem, listItems;
+    private TextView newWhat, newWhere;
 
-    // Model: Database of items
-    private ItemsDB itemsDB;
+    //Model: Database of items
+    private static ItemsDB itemsDB;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shopping);
 
-        itemsDB= new ItemsDB();
-        itemsDB.fillItemsDB();
+        ItemsDB.initialize();
+        itemsDB= ItemsDB.get();
 
-        items= findViewById(R.id.items);
+        //Text Fields
+        newWhat=  findViewById(R.id.what_text);
+        newWhere= findViewById(R.id.where_text);
 
-        listItems= findViewById(R.id.list_button);
-
-        // Lambda expression version of writing and handling onClick listening event
-        listItems.setOnClickListener((View view) -> {
-            items.setBackgroundColor(Color.parseColor("#FFFFFF"));
-            items.setText("Shopping List: \n" + itemsDB.listItems());
+        listItems= findViewById(R.id.list);
+        listItems.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(ShoppingActivity.this, ListActivity.class);
+                startActivity(intent);
+            }
         });
 
+        addItem= findViewById(R.id.add_button);
+        // adding a new thing
+        addItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String whatS= newWhat.getText().toString().trim();
+                String whereS= newWhere.getText().toString().trim();
+                if ((whatS.length() > 0) && (whereS.length() > 0)) {
+                    itemsDB.addItem(whatS, whereS);
+                    newWhat.setText("");
+                    newWhere.setText("");
+                } else Toast.makeText(ShoppingActivity.this, R.string.empty_toast, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
