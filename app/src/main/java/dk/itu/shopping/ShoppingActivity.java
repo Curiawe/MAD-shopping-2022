@@ -34,7 +34,7 @@ public class ShoppingActivity extends AppCompatActivity {
         // Lambda expression version of writing and handling onClick listening event
         listItems.setOnClickListener((View view) -> {
             items.setBackgroundColor(Color.parseColor("#FFFFFF"));
-            items.setText("Shopping List:" + itemsDB.listItems());
+            items.setText("Shopping List: \n" + itemsDB.listItems());
         });
 
     }

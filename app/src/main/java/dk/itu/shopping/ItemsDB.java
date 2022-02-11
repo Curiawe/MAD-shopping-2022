@@ -25,5 +25,8 @@ public class ItemsDB {
         ItemsDB.add(new Item("milk", "Netto"));
         ItemsDB.add(new Item("bread", "bakery"));
         ItemsDB.add(new Item("butter", "Irma"));
+
+        ItemsDB.add(new Item("peanut butter", "Meny"));
+        ItemsDB.add(new Item("bananas", "Rema 1000"));
     }
 }

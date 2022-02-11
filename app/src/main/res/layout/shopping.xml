@@ -21,7 +21,7 @@
         android:layout_height="27dp"
         android:layout_gravity="center"
         android:layout_margin="5dp"
-        android:background="#39f208"
+        android:background="#03A9F4"
         android:text="@string/list"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size" />
